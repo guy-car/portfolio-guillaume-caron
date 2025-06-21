@@ -1,0 +1,43 @@
+---
+title: 'Week 3: Building Something I Actually Want to Use'
+publishedAt: '2025-06-21'
+summary: 'Building a movie recommendation app in six days taught me about project management, strategic thinking, and the excitement of creating something I genuinely want to use.'
+---
+
+Week 3 was an AI Hackathon. Six days to make an app that we'd feel proud to show to potential employers and ideally one that's useful, to ourselves and others. Something we really wanted to make for whatever reason. The creativity in the cohort and different personalities really showed. People designed games, astrology tellers, fitness personal trainers, language tutors… I got to learn a little bit about everyone through what they spent 100h or so hacking at. We all worked extremely hard and had something to show for it by the end.
+
+I went for a movie recommendation app that uses an LLM to get to know your taste and makes curated recommendations. I had had really nice experiences using ChatGPT for that but its user interface was lacking and I wanted other functionalities that it didn't offer. I could imagine something different that I would want to use more. More convenient, more fun, more specialized.
+
+So I made an App called Watch Genie. The user can describe, in plain text, previous shows or movies they liked and how they'd like to find something similar.
+
+The LLM does its thing and thinks of good suggestions. But it doesn't just respond to you with a list. It mainly does 2 more things that are directly visible for the user:
+
+It shows you clickable posters of what it's recommending
+
+It generates clickable conversational chips to feed back into the conversation.
+
+Clickable buttons on the poster let you add to a watchlist or watch history. You can also thumb up or down. And all of that information gets turned into a taste profile that influences the LLM's subsequent recommendations.
+
+The chips are there to help with the exploration (inspired by RPG conversation trees, honestly). I defined categories for them that the LLM can call for depending on the context. Examples are:
+
+broaden: a parallel suggestion path or nearby theme
+
+deepen: something more specific or intense within the current theme
+
+curveball: a surprising but smart tonal shift
+
+hidden gem: lesser-known films that fit the vibe
+
+I think it makes it more fun to follow up and introduces unexpected turns in the exploration.
+
+Having only a week to come up with something from scratch pushed me way beyond just coding. I needed a project management mindset, product design skills, and strategic thinking about scope to make sure I actually had something to show. Time management, emotional regulation, setting realistic goals. Several times a day, checking in, re-prioritizing, letting go of things I was attached to (like getting info from Rotten Tomatoes, having animation or having a neat and tidy code base that follows React best practices…) and going towards things I was avoiding (making an API call and figuring out their documentation, defining my own AI tools or getting over obscure deployment errors).
+
+Part of that strategic thinking meant mapping out how everything connected. I’ve become quite fond of Excalidraw to make intuitive, fun and quick diagrams. It helps me wrap my head around complex systems and data flows. I had fun making it, perhaps you'll get something out of it too.
+
+<a href="https://link.excalidraw.com/readonly/ZoE6GTGm793BWhdqSNaT" target="_blank" rel="noopener noreferrer">
+  <img src="/watch_genie_diagram_tr.png" alt="Data flow diagram" />
+</a>
+
+This whole process was nothing short of exhilarating. I was shocked by how much energy that unleashed in me: happily working over 12h a day, focused, locked in. Thinking of something I’d like to use and making it myself is really empowering.
+
+I can imagine a future with many more specialized AI applications like this one. Right now it's mainly ChatGPT and Claude dominating what people think of as AI. They are jacks of all trades. We need those. But we also need experts. Very specialized tools for very specific needs. Being able to build such things excites me. This is why I joined Fractal's AI Accelerator.
