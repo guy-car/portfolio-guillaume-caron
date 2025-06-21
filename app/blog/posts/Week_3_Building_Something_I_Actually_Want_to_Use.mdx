@@ -11,23 +11,19 @@ I went for a movie recommendation app that uses an LLM to get to know your taste
 So I made an App called Watch Genie. The user can describe, in plain text, previous shows or movies they liked and how they'd like to find something similar.
 
 The LLM does its thing and thinks of good suggestions. But it doesn't just respond to you with a list. It mainly does 2 more things that are directly visible for the user:
-
-It shows you clickable posters of what it's recommending
-
-It generates clickable conversational chips to feed back into the conversation.
-
+<ul>
+<li>It shows you clickable posters of what it's recommending</li>
+<li>It generates clickable conversational chips to feed back into the conversation.</li>
+</ul>
 Clickable buttons on the poster let you add to a watchlist or watch history. You can also thumb up or down. And all of that information gets turned into a taste profile that influences the LLM's subsequent recommendations.
 
 The chips are there to help with the exploration (inspired by RPG conversation trees, honestly). I defined categories for them that the LLM can call for depending on the context. Examples are:
-
-broaden: a parallel suggestion path or nearby theme
-
-deepen: something more specific or intense within the current theme
-
-curveball: a surprising but smart tonal shift
-
-hidden gem: lesser-known films that fit the vibe
-
+<ul>
+<li>broaden: a parallel suggestion path or nearby theme</li>
+<li>deepen: something more specific or intense within the current theme</li>
+<li>curveball: a surprising but smart tonal shift</li>
+<li>hidden gem: lesser-known films that fit the vibe</li>
+</ul>
 I think it makes it more fun to follow up and introduces unexpected turns in the exploration.
 
 Having only a week to come up with something from scratch pushed me way beyond just coding. I needed a project management mindset, product design skills, and strategic thinking about scope to make sure I actually had something to show. Time management, emotional regulation, setting realistic goals. Several times a day, checking in, re-prioritizing, letting go of things I was attached to (like getting info from Rotten Tomatoes, having animation or having a neat and tidy code base that follows React best practices…) and going towards things I was avoiding (making an API call and figuring out their documentation, defining my own AI tools or getting over obscure deployment errors).
