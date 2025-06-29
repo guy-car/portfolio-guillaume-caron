@@ -6,6 +6,7 @@ type Metadata = {
   publishedAt: string
   summary: string
   image?: string
+  readingTime?: number
 }
 
 function parseFrontmatter(fileContent: string) {
@@ -20,7 +21,10 @@ function parseFrontmatter(fileContent: string) {
     let [key, ...valueArr] = line.split(': ')
     let value = valueArr.join(': ').trim()
     value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
-    metadata[key.trim() as keyof Metadata] = value
+    const keyName = key.trim() as keyof Metadata
+    if (keyName !== 'readingTime') {
+      metadata[keyName] = value as any
+    }
   })
 
   return { metadata: metadata as Metadata, content }
@@ -35,14 +39,26 @@ function readMDXFile(filePath) {
   return parseFrontmatter(rawContent)
 }
 
+function calculateReadingTime(content: string): number {
+  const wordsPerMinute = 200
+  const wordCount = content.split(/\s+/).length
+  return Math.ceil(wordCount / wordsPerMinute)
+}
+
 function getMDXData(dir) {
   let mdxFiles = getMDXFiles(dir)
   return mdxFiles.map((file) => {
     let { metadata, content } = readMDXFile(path.join(dir, file))
     let slug = path.basename(file, path.extname(file))
+    
+    // Calculate reading time
+    const readingTime = calculateReadingTime(content)
 
     return {
-      metadata,
+      metadata: {
+        ...metadata,
+        readingTime,
+      },
       slug,
       content,
     }

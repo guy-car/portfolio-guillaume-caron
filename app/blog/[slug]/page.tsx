@@ -85,10 +85,29 @@ export default function Blog({ params }) {
       <h1 className="title font-semibold text-2xl tracking-tighter">
         {post.metadata.title}
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+      <div className="flex flex-col space-y-1 mt-2 mb-8 text-sm">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {formatDate(post.metadata.publishedAt)}
         </p>
+        {post.metadata.readingTime && (
+          <div className="flex items-center space-x-1 text-sm text-neutral-600 dark:text-neutral-400">
+            <svg 
+              className="w-4 h-4" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" 
+              />
+            </svg>
+            <span>{post.metadata.readingTime} min read</span>
+          </div>
+        )}
       </div>
       <article className="prose">
         <CustomMDX source={post.content} />
