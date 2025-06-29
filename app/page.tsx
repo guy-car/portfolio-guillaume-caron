@@ -7,7 +7,7 @@ export default function Page() {
         Guillaume Caron
       </h1>
       <h2>
-        Reflections at the Learning Edge
+        Reflections at the learning edge
       </h2>
       <p className="mb-4 italic">
         AI engineering accelerator chronicles and occasional insights.
