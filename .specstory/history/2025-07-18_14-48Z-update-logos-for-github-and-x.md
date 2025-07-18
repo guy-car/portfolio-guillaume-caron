@@ -242,3 +242,49 @@ Now the three social media logos (GitHub, X, and LinkedIn) will be perfectly cen
 
 ---
 
+_**User**_
+
+tey look aligned to the right now
+
+---
+
+_**Assistant**_
+
+I see the issue! The logos are appearing on the right side instead of being centered. Let me check the current footer code and fix the centering issue.
+
+
+---
+
+Read file: app/components/footer.tsx
+
+---
+
+I see the issue. The problem is that the footer container itself might not be taking the full width, so the centering isn't working properly. Let me fix this by ensuring the footer takes full width and centers the content properly.
+
+
+---
+
+```diff
+  export default function Footer() {
+    return (
+-     <footer className="mb-16">
+-       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300 justify-center items-center">
++     <footer className="mb-16 w-full">
++       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300 justify-center items-center w-full">
+  
+          <li>
+```
+
+---
+
+Perfect! I've added `w-full` to both the footer and ul elements to ensure they take the full width of the container. This should fix the centering issue and make the logos appear properly centered on the page instead of being aligned to the right.
+
+The `w-full` class ensures that:
+- The footer container takes the full available width
+- The ul element also takes the full width
+- Combined with `justify-center`, this will properly center the logos horizontally
+
+Now the three social media icons should be perfectly centered on the page.
+
+---
+
