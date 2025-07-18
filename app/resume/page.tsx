@@ -6,14 +6,29 @@ export default function ResumePage() {
   useEffect(() => {
     // Add the download function to window object
     ;(window as any).downloadResume = function() {
-      const element = document.createElement('a');
-      const html = document.documentElement.outerHTML;
-      const file = new Blob([html], {type: 'text/html'});
-      element.href = URL.createObjectURL(file);
-      element.download = 'Guillaume_Caron_Resume.html';
-      document.body.appendChild(element);
-      element.click();
-      document.body.removeChild(element);
+      // Clone the document to avoid modifying the original
+      const docClone = document.cloneNode(true) as Document
+      
+      // Remove navigation and footer from the clone
+      const nav = docClone.querySelector('nav')
+      const footer = docClone.querySelector('footer')
+      const actions = docClone.querySelector('.resume-actions')
+      
+      if (nav) nav.remove()
+      if (footer) footer.remove()
+      if (actions) actions.remove()
+      
+      // Get the cleaned HTML
+      const cleanHTML = docClone.documentElement.outerHTML
+      
+      // Create and download the file
+      const element = document.createElement('a')
+      const file = new Blob([cleanHTML], {type: 'text/html'})
+      element.href = URL.createObjectURL(file)
+      element.download = 'Guillaume_Caron_Resume.html'
+      document.body.appendChild(element)
+      element.click()
+      document.body.removeChild(element)
     }
   }, [])
 
@@ -52,6 +67,7 @@ export default function ResumePage() {
           border-radius: 10px;
           box-shadow: -8px 16px 32px rgba(0,0,0,0.10), -2px 4px 8px rgba(0,0,0,0.06);
           border: 1.5px solid #bfcad6;
+          position: relative;
         }
 
         .header {
@@ -191,9 +207,9 @@ export default function ResumePage() {
         }
 
         .resume-actions {
-          position: fixed;
-          top: 2.5rem;
-          right: 2.5rem;
+          position: absolute;
+          top: 20px;
+          right: 20px;
           display: flex;
           gap: 1rem;
           z-index: 1000;
@@ -220,37 +236,6 @@ export default function ResumePage() {
           font-size: 2rem;
         }
 
-        @media print {
-          .resume-page-wrapper {
-            margin: 0;
-            padding: 10px;
-            background: white;
-          }
-          
-          .resume-container {
-            font-size: 13px;
-          }
-          
-          @page {
-            margin: 0.5in;
-            size: A4;
-          }
-          
-          .experience-item {
-            page-break-inside: avoid;
-            break-inside: avoid;
-          }
-          
-          .job-header {
-            page-break-after: avoid;
-            break-after: avoid;
-          }
-          
-          .resume-actions {
-            display: none !important;
-          }
-        }
-
         @media (max-width: 768px) {
           .contact-info {
             flex-direction: column;
@@ -271,17 +256,14 @@ export default function ResumePage() {
       `}</style>
 
       <div className="resume-page-wrapper">
-        <div className="resume-actions">
-          <button className="resume-action" onClick={() => window.print()} title="Print">
-            <i className="fa-solid fa-print"></i>
-          </button>
-          <button className="resume-action" onClick={() => (window as any).downloadResume()} title="Download">
-            <i className="fa-solid fa-download"></i>
-          </button>
-        </div>
-        
         <div className="resume-container">
           <div className="resume">
+            <div className="resume-actions">
+              <button className="resume-action" onClick={() => (window as any).downloadResume()} title="Download Resume">
+                <i className="fa-solid fa-download"></i>
+              </button>
+            </div>
+            
             <header className="header">
               <h1>Guillaume Caron</h1>
               <div className="contact-info" style={{justifyContent: 'space-evenly', textAlign: 'center'}}>
