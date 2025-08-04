@@ -4,6 +4,9 @@ import { useEffect } from 'react'
 
 export default function ResumePage() {
   useEffect(() => {
+    // Set the page max-width for resume
+    document.body.style.setProperty('--page-max-width', '800px')
+    
     // Add the download function to window object
     ;(window as any).downloadResume = function() {
       // Clone the document to avoid modifying the original
@@ -30,22 +33,20 @@ export default function ResumePage() {
       element.click()
       document.body.removeChild(element)
     }
+    
+    // Cleanup: reset the variable when component unmounts
+    return () => {
+      document.body.style.removeProperty('--page-max-width')
+    }
   }, [])
 
   return (
     <>
       <style jsx global>{`
-        /* Override layout constraints for resume page */
+        /* Resume page wrapper */
         .resume-page-wrapper {
-          margin: -20px;
-          padding: 20px;
           min-height: calc(100vh - 200px);
-          width: 100vw;
-          position: relative;
-          left: 50%;
-          right: 50%;
-          margin-left: -50vw;
-          margin-right: -50vw;
+          width: 100%;
         }
 
         .resume-container {
@@ -53,14 +54,12 @@ export default function ResumePage() {
           line-height: 1.4;
           color: #000;
           font-size: 14px;
-          max-width: none;
-          margin: 0;
-          padding: 0;
           width: 100%;
         }
 
         .resume {
-          max-width: 800px;
+          width: 100%;
+          max-width: 100%;
           margin: 0 auto;
           background: #F6F6E9;
           padding: 40px;
@@ -204,6 +203,7 @@ export default function ResumePage() {
         .education-details {
           font-size: 0.9em;
           color: #666;
+          font-weight: 400;
         }
 
         .resume-actions {
@@ -320,21 +320,10 @@ export default function ResumePage() {
                 </div>
                 <div className="job-description">
                   <p>Led 100+ film and video projects from pitch to delivery with budgets up to $2M.</p>
-                  <p>Translated creative goals into technical execution plans while managing cross-functional teams under tight deadlines.</p>
-                  <p>Developed problem-solving skills balancing creativity with real-world constraints and evolving requirements.</p>
+                  <p>Turned creative goals into technical execution plans while managing cross-functional teams under tight deadlines.</p>
                 </div>
               </div>
 
-              <div className="experience-item">
-                <div className="job-header">
-                  <div className="job-title-company">Strategic Procurement | Havas & PSA Peugeot Citroën</div>
-                  <div className="date-location">2011 - 2013</div>
-                </div>
-                <div className="job-description">
-                  <p>Contributed to $100K+ annual cost savings through vendor consolidation and process optimization.</p>
-                  <p>Built KPI dashboards and presentations for C-level executive review.</p>
-                </div>
-              </div>
             </section>
 
             <section className="section tech-stack-section">
@@ -350,7 +339,7 @@ export default function ResumePage() {
                 </div>
                 <div className="tech-category">
                   <div className="tech-label">AI & Tools:</div>
-                  <div className="tech-items">Vercel AI SDK — Vector Search — AWS S3/SST — GitHub Actions — Git</div>
+                  <div className="tech-items">Vercel AI SDK — Git — Cursor AI</div>
                 </div>
                 <div className="tech-category">
                   <div className="tech-label">Auth:</div>
@@ -367,23 +356,15 @@ export default function ResumePage() {
               <h2>Education</h2>
               
               <div className="education-item">
-                <div className="education-title">Next.js App Router Fundamentals | Professional Certification</div>
-                <div className="education-details">2025</div>
+                <div className="education-title"><span className='education-details'>2022-2023 | </span>Certified Mindfulness Teacher | Mindfulness Training Institute, Berkeley, CA</div>
               </div>
               
               <div className="education-item">
-                <div className="education-title">Certified Mindfulness Teacher | Mindfulness Training Institute, Berkeley, CA</div>
-                <div className="education-details">2023</div>
+                <div className="education-title"><span className='education-details'>2011-2013 | </span>Master's in International Purchasing & Management | KEDGE Business School, France</div>
               </div>
               
               <div className="education-item">
-                <div className="education-title">Master's in International Purchasing & Management | KEDGE Business School, France</div>
-                <div className="education-details">2011 - 2013</div>
-              </div>
-              
-              <div className="education-item">
-                <div className="education-title">Bachelor's in Commerce & Supply Chain Management | Rouen Business School, France</div>
-                <div className="education-details">2008 - 2011</div>
+                <div className="education-title"><span className='education-details'>2008-2011 | </span>Bachelor's in Commerce & Supply Chain Management | Rouen Business School, France</div>
               </div>
             </section>
           </div>
