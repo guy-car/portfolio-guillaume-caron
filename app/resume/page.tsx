@@ -62,7 +62,8 @@ export default function ResumePage() {
           max-width: 100%;
           margin: 0 auto;
           background: #F6F6E9;
-          padding: 40px;
+          padding: 30px;
+          padding-top: 20px;
           border-radius: 10px;
           box-shadow: -8px 16px 32px rgba(0,0,0,0.10), -2px 4px 8px rgba(0,0,0,0.06);
           border: 1.5px solid #bfcad6;
@@ -71,15 +72,15 @@ export default function ResumePage() {
 
         .header {
           text-align: left;
-          margin-bottom: 30px;
+          margin-bottom: 10px;
           border-bottom: 2px solid #222;
           padding-bottom: 15px;
         }
 
         .header h1 {
-          font-size: 3em;
+          font-size: 2.5em;
           font-weight: 800;
-          margin-bottom: 5px;
+          margin-bottom: 1px;
           color: #000;
           letter-spacing: -1px;
         }
@@ -120,20 +121,21 @@ export default function ResumePage() {
         }
 
         .section {
-          margin-bottom: 25px;
+          margin-bottom: 5px;
         }
 
         .section h2 {
           font-size: 1.3em;
           font-weight: 800;
-          margin-bottom: 15px;
+          margin-top: 10px;
+          margin-bottom: 5px;
           color: #000;
           text-decoration: underline;
           text-underline-offset: 4px;
         }
 
         .experience-item {
-          margin-bottom: 20px;
+          margin-bottom: 10px;
         }
 
         .job-header {
@@ -148,12 +150,21 @@ export default function ResumePage() {
           font-size: 1.1em;
         }
 
-        .date-location {
+        .work-highlight {
+          font-weight: bold;
+          color: #111;
+          border-bottom: 1px solid rgb(98, 121, 153);
           font-size: 1em;
-          color: #222;
+          }
+
+        .date-location {
+          font-size: 0.95em;
+          color: #666;
           font-weight: 600;
           text-align: right;
           min-width: 180px;
+          font-family: 'JetBrains Mono', 'Courier New', monospace;
+          text-align: right;
         }
 
         .job-description {
@@ -167,7 +178,7 @@ export default function ResumePage() {
         }
 
         .tech-stack-section {
-          margin-bottom: 25px;
+          margin-bottom: 5px;
         }
 
         .tech-categories {
@@ -183,7 +194,7 @@ export default function ResumePage() {
 
         .tech-label {
           font-weight: bold;
-          min-width: 100px;
+          min-width: 115px;
           margin-right: 10px;
         }
 
@@ -192,18 +203,21 @@ export default function ResumePage() {
         }
 
         .education-item {
-          margin-bottom: 15px;
+          margin-bottom: 5px;
         }
 
         .education-title {
-          font-weight: bold;
+          font-weight: 600;
           margin-bottom: 2px;
         }
 
-        .education-details {
+        .date-details {
           font-size: 0.9em;
           color: #666;
           font-weight: 400;
+          width: 80px;
+          font-family: 'JetBrains Mono', 'Courier New', monospace;
+          text-align: right;
         }
 
         .resume-actions {
@@ -236,6 +250,17 @@ export default function ResumePage() {
           font-size: 2rem;
         }
 
+        .custom-link {
+          color:rgb(98, 121, 153);
+          font-weight: 700;
+          text-decoration: none;
+          transition: color 0.2s;
+        }
+
+        .custom-link:hover {
+          color:rgb(128, 153, 183);
+        }
+
         @media (max-width: 768px) {
           .contact-info {
             flex-direction: column;
@@ -246,11 +271,6 @@ export default function ResumePage() {
             flex-direction: column;
             align-items: flex-start;
             gap: 0.5em;
-          }
-          
-          .date-location {
-            text-align: left;
-            min-width: auto;
           }
         }
       `}</style>
@@ -279,13 +299,16 @@ export default function ResumePage() {
               
               <div className="experience-item">
                 <div className="job-header">
-                  <div className="job-title-company">Full Stack Engineer | Fractal Tech</div>
+                  <div className="job-title-company">Full Stack Engineer | Fractal Tech AI Accelerator</div>
                   <div className="date-location">May 2024 - Present</div>
                 </div>
                 <div className="job-description">
-                  <p>Built and deployed 15+ full-stack applications using TypeScript, React, Next.js, and PostgreSQL in intensive AI engineering accelerator.</p>
-                  <p>Developed custom AI tools with API integrations and function calling, applying prompt engineering techniques with 5+ PRs/day contribution rate.</p>
-                  <p>Gained production experience with modern toolchains, MCPs (Model Context Protocol), and AI-assisted development through Cursor and real-world startup projects.</p>
+                  <p>800hrs+ of full-stack development, 15+ projects, 10x AI-assisted Coding, shipping 5+ PRs/day</p>
+                  <p>Developed custom AI tools with API integrations and function calling, with state of the art prompt engineering</p>
+                  <ul><b>Selected projects:</b></ul>
+                  <li><span className='work-highlight'><a href="https://www.feather.rsvp/" target="_blank" rel="noopener noreferrer" className="custom-link">Feather.rsvp (NYC Startup)</a></span> - Delivered significant business value in just 2 weeks by implementing an intuitive and sleek Rich Text Editor (TipTap) with minimal senior guidance in an unfamiliar codebase.</li>
+                  <li><span className='work-highlight'><a href="https://week2-chatbot.vercel.app/" target="_blank" rel="noopener noreferrer" className="custom-link">Watch Genie</a></span> - Built a chatbot with Next.js, tRPC, Supabase, and Vercel AI SDK to provide personalized movie recommendations based on user preferences.</li>
+
                 </div>
               </div>
 
@@ -297,7 +320,6 @@ export default function ResumePage() {
                 <div className="job-description">
                   <p>Dedicated 500+ hours to intensive full-stack development through structured programs including Scrimba's React course and Full Stack Open.</p>
                   <p>Built multiple applications: password generator, language translator, Chrome extension, unit converter.</p>
-                  <p>Developed proficiency in asynchronous JavaScript, responsive design, and API integration with modern tooling.</p>
                 </div>
               </div>
 
@@ -309,7 +331,6 @@ export default function ResumePage() {
                 <div className="job-description">
                   <p>Reduced operational overhead by 25% through software audits and vendor realignment during transitional phase.</p>
                   <p>Optimized Salesforce CRM processes and implemented AV systems for hybrid event delivery.</p>
-                  <p>Created internal documentation and knowledge transfer systems for sustainable operations.</p>
                 </div>
               </div>
 
@@ -319,8 +340,8 @@ export default function ResumePage() {
                   <div className="date-location">2013 - 2021</div>
                 </div>
                 <div className="job-description">
-                  <p>Led 100+ film and video projects from pitch to delivery with budgets up to $2M.</p>
-                  <p>Turned creative goals into technical execution plans while managing cross-functional teams under tight deadlines.</p>
+                  <p>Led cross-functional teams across 100+ film and video projects from pitch to delivery with budgets up to $2M.</p>
+                  <p>Turned creative goals into technical execution plans under tight deadlines.</p>
                 </div>
               </div>
 
@@ -329,25 +350,25 @@ export default function ResumePage() {
             <section className="section tech-stack-section">
               <h2>Tech Stack</h2>
               <div className="tech-categories">
+              <div className="tech-category">
+                  <div className="tech-label">Languages</div>
+                  <div className="tech-items">TypeScript — Javascript — SQL — CSS</div>
+                </div>
                 <div className="tech-category">
                   <div className="tech-label">Frontend:</div>
-                  <div className="tech-items">React — Next.js — TypeScript — Tailwind CSS — JavaScript ES6+</div>
+                  <div className="tech-items">React — Next.js — React Native —Tailwind CSS — Shadcn UI</div>
                 </div>
                 <div className="tech-category">
                   <div className="tech-label">Backend:</div>
-                  <div className="tech-items">Node.js — PostgreSQL — Express — Elysia — REST APIs — SQL/NoSQL</div>
+                  <div className="tech-items">Node.js — Supabase — PostgreSQL — Express — Drizzle ORM — WebSockets</div>
                 </div>
                 <div className="tech-category">
-                  <div className="tech-label">AI & Tools:</div>
-                  <div className="tech-items">Vercel AI SDK — Git — Cursor AI</div>
+                  <div className="tech-label">AI Integration:</div>
+                  <div className="tech-items">Vercel AI SDK — Structured Output — Tool Calling — Context Management</div>
                 </div>
                 <div className="tech-category">
-                  <div className="tech-label">Auth:</div>
-                  <div className="tech-items">Better-Auth — 0Auth — Supabase — NextAuth</div>
-                </div>
-                <div className="tech-category">
-                  <div className="tech-label">Deployment:</div>
-                  <div className="tech-items">Docker — Vercel — Render — Netlify</div>
+                  <div className="tech-label">DevOps & Tools:</div>
+                  <div className="tech-items">Git — Docker — Vercel — Render</div>
                 </div>
               </div>
             </section>
@@ -356,15 +377,15 @@ export default function ResumePage() {
               <h2>Education</h2>
               
               <div className="education-item">
-                <div className="education-title"><span className='education-details'>2022-2023 | </span>Certified Mindfulness Teacher | Mindfulness Training Institute, Berkeley, CA</div>
+                <div className="education-title"><span className='date-details'>2022-2023 | </span>Certified Mindfulness Teacher | Mindfulness Training Institute, Berkeley, CA</div>
               </div>
               
               <div className="education-item">
-                <div className="education-title"><span className='education-details'>2011-2013 | </span>Master's in International Purchasing & Management | KEDGE Business School, France</div>
+                <div className="education-title"><span className='date-details'>2011-2013 | </span>Master's in International Purchasing & Management | KEDGE Business School, France</div>
               </div>
               
               <div className="education-item">
-                <div className="education-title"><span className='education-details'>2008-2011 | </span>Bachelor's in Commerce & Supply Chain Management | Rouen Business School, France</div>
+                <div className="education-title"><span className='date-details'>2008-2011 | </span>Bachelor's in Commerce & Supply Chain Management | Rouen Business School, France</div>
               </div>
             </section>
           </div>
