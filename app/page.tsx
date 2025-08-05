@@ -32,15 +32,7 @@ export default function Page() {
 
         {/* Featured Work Section */}
         <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <h2 className="text-xl font-semibold tracking-tight">Featured work</h2>
-            <Link 
-              href="/projects" 
-              className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors"
-            >
-              See more
-            </Link>
-          </div>
+          <h2 className="text-xl font-semibold tracking-tight">Featured work</h2>
           
           <div className="relative group">
             <FeaturedProject
@@ -55,15 +47,7 @@ export default function Page() {
 
         {/* Featured Post Section */}
         <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <h2 className="text-xl font-semibold tracking-tight">Featured post</h2>
-            <Link 
-              href="/blog" 
-              className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors"
-            >
-              See more
-            </Link>
-          </div>
+          <h2 className="text-xl font-semibold tracking-tight">Featured post</h2>
           
           <FeaturedBlogPost />
         </div>
