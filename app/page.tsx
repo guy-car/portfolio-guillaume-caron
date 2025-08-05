@@ -1,17 +1,11 @@
 import { FeaturedBlogPost } from 'app/components/blog-posts'
 import { FeaturedProject } from 'app/components/project'
 import WindOfLight from 'app/components/WindOfLight'
-import Link from 'next/link'
+import { projects } from 'app/data/projects'
 
 export default function Page() {
-  // Featured project data
-  const featuredProject = {
-    title: 'Feather.rsvp',
-    description: 'I implemented TipTap for Feather.rsvp, a NYC startup. In just 2 weeks, I delivered a sleek and intuitive Rich Text Editor with minimal senior guidance in an unfamiliar codebase.',
-    technologies: ['React', 'TypeScript', 'Chakra UI V3', 'TipTap'],
-    liveUrl: 'https://www.feather.rsvp/',
-    image: '/project-showcase/feather/feather-demo-video-before-after.mp4'
-  }
+  // Get the featured project (first one for now)
+  const featuredProject = projects[0]
 
   return (
     <>
@@ -41,6 +35,7 @@ export default function Page() {
               technologies={featuredProject.technologies}
               liveUrl={featuredProject.liveUrl}
               image={featuredProject.image}
+              slug={featuredProject.slug}
             />
           </div>
         </div>
