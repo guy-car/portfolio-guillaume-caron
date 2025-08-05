@@ -85,7 +85,7 @@ export function FeaturedBlogPost() {
 
   return (
     <Link
-      className="block transition-all duration-200 hover:bg-neutral-50 dark:hover:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 hover:border-neutral-300 dark:hover:border-neutral-600"
+                  className="block glass-a rounded-lg p-6"
       href={`/blog/${latestPost.slug}`}
     >
       <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-4">
