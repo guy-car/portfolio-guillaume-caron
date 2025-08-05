@@ -14,7 +14,7 @@ interface ProjectProps {
 
 export function Project({ title, description, technologies, liveUrl, sourceUrl, image }: ProjectProps) {
   return (
-    <div className="border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors">
+    <div className="glass-a rounded-lg p-6">
       <div className="flex gap-6">
         {/* Left Column - Project Info */}
         <div className="flex-1">
@@ -87,7 +87,7 @@ export function Project({ title, description, technologies, liveUrl, sourceUrl, 
 export function FeaturedProject({ title, description, technologies, liveUrl, sourceUrl, image }: ProjectProps) {
   return (
     <div 
-      className="border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors cursor-pointer"
+      className="glass-b rounded-lg p-6 cursor-pointer"
       onClick={() => {
         // For now, this will go to the live URL if available, otherwise do nothing
         if (liveUrl) {
