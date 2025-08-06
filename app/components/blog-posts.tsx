@@ -21,16 +21,17 @@ export function BlogPostsEnhanced() {
             className="block mb-2 p-2 rounded-lg transition-all duration-200 hover:bg-neutral-50 dark:hover:bg-neutral-900/50 border border-transparent hover:border-neutral-200 dark:hover:border-neutral-800"
             href={`/blog/${post.slug}`}
           >
-            <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-4">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[120px] tabular-nums text-sm mb-2 md:mb-0">
-                {formatDate(post.metadata.publishedAt, false)}
-              </p>
-              <div className="flex-1">
-                <h3 className="text-neutral-900 dark:text-neutral-100 tracking-tight font-medium mb-2 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors">
-                  {post.metadata.title}
-                </h3>
-                <div className="flex items-center space-x-4 mb-3 text-sm text-neutral-600 dark:text-neutral-400">
-                  {post.metadata.readingTime && (
+            <div className="w-full">
+              <h3 className="text-neutral-900 dark:text-neutral-100 tracking-tight font-medium mb-2 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors">
+                {post.metadata.title}
+              </h3>
+              <div className="flex items-center space-x-2 mb-3 text-sm text-neutral-600 dark:text-neutral-400">
+                <span className="tabular-nums">
+                  {formatDate(post.metadata.publishedAt, false)}
+                </span>
+                {post.metadata.readingTime && (
+                  <>
+                    <span className="text-neutral-400 dark:text-neutral-500">|</span>
                     <div className="flex items-center space-x-1">
                       <svg 
                         className="w-4 h-4" 
@@ -48,14 +49,14 @@ export function BlogPostsEnhanced() {
                       </svg>
                       <span>{post.metadata.readingTime} min read</span>
                     </div>
-                  )}
-                </div>
-                {post.metadata.summary && (
-                  <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
-                    {post.metadata.summary}
-                  </p>
+                  </>
                 )}
               </div>
+              {post.metadata.summary && (
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
+                  {post.metadata.summary}
+                </p>
+              )}
             </div>
           </Link>
         ))}
@@ -88,16 +89,17 @@ export function FeaturedBlogPost() {
                   className="block glass-a rounded-lg p-6"
       href={`/blog/${latestPost.slug}`}
     >
-      <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-4">
-        <p className="text-neutral-600 dark:text-neutral-400 w-[120px] tabular-nums text-sm mb-2 md:mb-0">
-          {formatDate(latestPost.metadata.publishedAt, false)}
-        </p>
-        <div className="flex-1">
-          <h3 className="text-neutral-900 dark:text-neutral-100 tracking-tight font-medium mb-2 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors">
-            {latestPost.metadata.title}
-          </h3>
-          <div className="flex items-center space-x-4 mb-3 text-sm text-neutral-600 dark:text-neutral-400">
-            {latestPost.metadata.readingTime && (
+      <div className="w-full">
+        <h3 className="text-neutral-900 dark:text-neutral-100 tracking-tight font-medium mb-2 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors">
+          {latestPost.metadata.title}
+        </h3>
+        <div className="flex items-center space-x-2 mb-3 text-sm text-neutral-600 dark:text-neutral-400">
+          <span className="tabular-nums">
+            {formatDate(latestPost.metadata.publishedAt, false)}
+          </span>
+          {latestPost.metadata.readingTime && (
+            <>
+              <span className="text-neutral-400 dark:text-neutral-500">|</span>
               <div className="flex items-center space-x-1">
                 <svg 
                   className="w-4 h-4" 
@@ -115,14 +117,14 @@ export function FeaturedBlogPost() {
                 </svg>
                 <span>{latestPost.metadata.readingTime} min read</span>
               </div>
-            )}
-          </div>
-          {latestPost.metadata.summary && (
-            <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
-              {latestPost.metadata.summary}
-            </p>
+            </>
           )}
         </div>
+        {latestPost.metadata.summary && (
+          <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
+            {latestPost.metadata.summary}
+          </p>
+        )}
       </div>
     </Link>
   )
