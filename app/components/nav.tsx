@@ -19,9 +19,9 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800">
       <div className="mx-4 lg:mx-auto" style={{ maxWidth: 'var(--page-max-width, 36rem)' }}>
-        <div className="flex items-center justify-between py-3">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-3">
           {/* Brand name on the left */}
-          <Link href="/" className="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors">
+          <Link href="/" className="text-2xl sm:text-3xl font-semibold text-neutral-900 dark:text-neutral-100 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors mb-2 sm:mb-0">
             Guillaume Caron
           </Link>
           

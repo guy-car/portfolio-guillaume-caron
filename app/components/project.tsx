@@ -85,7 +85,7 @@ export function ProjectCard({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="flex gap-6">
+      <div className="flex flex-col lg:flex-row gap-4 lg:gap-6">
         {/* Left Column - Project Info */}
         <div className="flex-1">
           <h3 className="font-semibold text-lg mb-2">{title}</h3>
@@ -133,7 +133,7 @@ export function ProjectCard({
         
         {/* Right Column - Image/Video */}
         {image && (
-          <div className="flex-shrink-0 w-60 h-60 flex items-center justify-center">
+          <div className="flex-shrink-0 w-full lg:w-60 h-48 lg:h-60 flex items-center justify-center">
             {image.endsWith('.mp4') ? (
               <video 
                 ref={videoRef}
