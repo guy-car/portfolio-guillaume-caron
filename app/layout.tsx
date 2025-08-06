@@ -59,7 +59,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
       </head>
       <body className="antialiased mx-4 mt-8 lg:mx-auto" style={{ maxWidth: 'var(--page-max-width, 36rem)' }}>
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0 pt-16">
           <Navbar />
           {children}
           <Footer />
