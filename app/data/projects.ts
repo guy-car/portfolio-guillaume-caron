@@ -13,7 +13,7 @@ export const projects: Project[] = [
   {
     title: 'Feather.rsvp',
     description: 'I implemented TipTap for Feather.rsvp, a NYC startup. In just 2 weeks, I delivered a sleek and intuitive Rich Text Editor with minimal senior guidance in an unfamiliar codebase.',
-    technologies: ['React', 'TypeScript', 'Chakra UI V3', 'TipTap'],
+    technologies: ['React', 'TypeScript', 'TipTap','Chakra UI V3', ],
     liveUrl: 'https://www.feather.rsvp/welcome',
     image: '/project-showcase/feather/feather-demo-video-before-after.mp4',
     slug: 'feather-rsvp',

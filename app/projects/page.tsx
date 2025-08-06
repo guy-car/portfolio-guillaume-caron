@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Project } from '../components/project'
+import { ProjectCard } from '../components/project'
 import { projects } from '../data/projects'
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function ProjectsPage() {
       
       <div className="space-y-8">
         {projects.map((project, index) => (
-          <Project
+          <ProjectCard
             key={index}
             title={project.title}
             description={project.description}
@@ -23,6 +23,8 @@ export default function ProjectsPage() {
             sourceUrl={project.sourceUrl}
             image={project.image}
             slug={project.slug}
+            variant="glass-a"
+            chipStyle="chipStyle5"
           />
         ))}
       </div>
