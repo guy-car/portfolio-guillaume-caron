@@ -322,7 +322,7 @@ export default function ResumePage() {
               
               <div className="experience-item">
                 <div className="job-header">
-                  <div className="job-title-company">Full Stack Engineer | Fractal Tech AI Accelerator</div>
+                  <div className="job-title-company">Full Stack Engineer | Fractal Tech AI Accelerator, NYC</div>
                   <div className="date-location">May 2024 - Present</div>
                 </div>
                 <div className="job-description">
@@ -337,7 +337,7 @@ export default function ResumePage() {
 
               <div className="experience-item">
                 <div className="job-header">
-                  <div className="job-title-company">Self-Taught Developer | Independent Study</div>
+                  <div className="job-title-company">Self-Taught Developer | Independent Study, NYC</div>
                   <div className="date-location">Jan 2024 - May 2024</div>
                 </div>
                 <div className="job-description">
@@ -348,7 +348,7 @@ export default function ResumePage() {
 
               <div className="experience-item">
                 <div className="job-header">
-                  <div className="job-title-company">Operations & Systems Specialist | New York Insight Meditation Center</div>
+                  <div className="job-title-company">Operations & Systems Specialist | NY Insight Meditation Center, NYC</div>
                   <div className="date-location">Mar 2024 - Nov 2024</div>
                 </div>
                 <div className="job-description">
@@ -359,7 +359,7 @@ export default function ResumePage() {
 
               <div className="experience-item">
                 <div className="job-header">
-                  <div className="job-title-company">Mindfulness Teacher & French Interpreter/Tutor | Freelance</div>
+                  <div className="job-title-company">Mindfulness Teacher & French Interpreter/Tutor | Freelance, NYC</div>
                   <div className="date-location">Mar 2021 - Nov 2023</div>
                 </div>
                 <div className="job-description">
@@ -370,7 +370,7 @@ export default function ResumePage() {
 
               <div className="experience-item">
                 <div className="job-header">
-                  <div className="job-title-company">Cinematographer & Producer | Film Industry (NYC)</div>
+                  <div className="job-title-company">Cinematographer & Producer | Film Industry, NYC</div>
                   <div className="date-location">2013 - 2021</div>
                 </div>
                 <div className="job-description">
