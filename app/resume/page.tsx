@@ -7,33 +7,6 @@ export default function ResumePage() {
     // Set the page max-width for resume
     document.body.style.setProperty('--page-max-width', '800px')
     
-    // Add the download function to window object
-    ;(window as any).downloadResume = function() {
-      // Clone the document to avoid modifying the original
-      const docClone = document.cloneNode(true) as Document
-      
-      // Remove navigation and footer from the clone
-      const nav = docClone.querySelector('nav')
-      const footer = docClone.querySelector('footer')
-      const actions = docClone.querySelector('.resume-actions')
-      
-      if (nav) nav.remove()
-      if (footer) footer.remove()
-      if (actions) actions.remove()
-      
-      // Get the cleaned HTML
-      const cleanHTML = docClone.documentElement.outerHTML
-      
-      // Create and download the file
-      const element = document.createElement('a')
-      const file = new Blob([cleanHTML], {type: 'text/html'})
-      element.href = URL.createObjectURL(file)
-      element.download = 'Guillaume_Caron_Resume.html'
-      document.body.appendChild(element)
-      element.click()
-      document.body.removeChild(element)
-    }
-    
     // Cleanup: reset the variable when component unmounts
     return () => {
       document.body.style.removeProperty('--page-max-width')
@@ -273,15 +246,65 @@ export default function ResumePage() {
             gap: 0.5em;
           }
         }
+
+        /* Print styles for clean PDF export */
+        @media print {
+          /* Hide site chrome and action buttons */
+          nav, footer, .resume-actions { display: none !important; }
+
+          html, body { margin: 0 !important; padding: 0 !important; background: #fff !important; }
+          body { --page-max-width: 100% !important; }
+          main { padding: 0 !important; margin: 0 !important; }
+
+          /* Expand resume to full printable area and simplify */
+          .resume-page-wrapper,
+          .resume-container,
+          .resume {
+            width: 100% !important;
+            max-width: none !important;
+            margin: 0 !important;
+            box-shadow: none !important;
+            border: 0 !important;
+            background: #fff !important;
+            /* Slightly narrower gutters for better width use */
+            padding: 0.18in !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+          }
+
+          /* Improve text readability on print */
+          .resume-container { color: #000 !important; font-size: 10.9pt !important; line-height: 1.30 !important; }
+          .header h1 { font-size: 19pt !important; }
+          .section h2 { font-size: 12.5pt !important; text-decoration: none !important; border: 0 !important; }
+
+          /* Condense header separator */
+          .header { padding-bottom: 8px !important; margin-bottom: 6px !important; border-bottom-width: 1px !important; }
+
+          /* Tighten vertical spacing to fit one page */
+          .section { margin-bottom: 2px !important; }
+          .experience-item { margin-bottom: 5px !important; break-inside: avoid; page-break-inside: avoid; }
+          .education-item { margin-bottom: 4px !important; break-inside: avoid; page-break-inside: avoid; }
+          .job-description p { margin-bottom: 3px !important; }
+
+          /* Allow date column to flex smaller on print */
+          .date-location { min-width: auto !important; font-size: 10pt !important; }
+        }
+
+        /* Set page size and margins */
+        @page {
+          size: Letter;
+          /* Remove outer margins; we control gutters via .resume padding */
+          margin: 0;
+        }
       `}</style>
 
       <div className="resume-page-wrapper">
         <div className="resume-container">
           <div className="resume">
             <div className="resume-actions">
-              <button className="resume-action" onClick={() => (window as any).downloadResume()} title="Download Resume">
+              <a className="resume-action" href="/Guillaume_Caron_software_engineer_resume.pdf" title="Download PDF" target="_blank" rel="noopener noreferrer" download>
                 <i className="fa-solid fa-download"></i>
-              </button>
+              </a>
             </div>
             
             <header className="header">
@@ -331,6 +354,17 @@ export default function ResumePage() {
                 <div className="job-description">
                   <p>Reduced operational overhead by 25% through software audits and vendor realignment during transitional phase.</p>
                   <p>Optimized Salesforce CRM processes and implemented AV systems for hybrid event delivery.</p>
+                </div>
+              </div>
+
+              <div className="experience-item">
+                <div className="job-header">
+                  <div className="job-title-company">Mindfulness Teacher & French Interpreter/Tutor | Freelance</div>
+                  <div className="date-location">Mar 2021 - Nov 2023</div>
+                </div>
+                <div className="job-description">
+                  <p>Self-directed practice across diverse settings—from DOE test interpretation to teaching French professionals and meditation to people from all walks of life.</p>
+                  <p>Created safe learning spaces for people from all walks of life, developing the emotional intelligence and active listening I apply to understanding user needs.</p>
                 </div>
               </div>
 
