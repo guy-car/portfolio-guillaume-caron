@@ -312,7 +312,7 @@ export default function ResumePage() {
               <div className="contact-info" style={{justifyContent: 'space-evenly', textAlign: 'center'}}>
                 <span><i className="fa-solid fa-envelope"></i><a href="mailto:guil.crn@gmail.com">guil.crn@gmail.com</a></span>
                 <span><i className="fa-solid fa-phone"></i>+1 718 581 3551</span>
-                <span><i className="fa-brands fa-github"></i><a href="https://github.com/guy-car?tab=repositories" target="_blank" rel="noopener noreferrer">github.com/guy-car</a></span>
+                <span><i className="fa-solid fa-globe"></i><a href="https://www.guillaumecaronweb.com" target="_blank" rel="noopener noreferrer">guillaumecaronweb.com</a></span>
                 <span><i className="fa-solid fa-location-dot"></i>New York, NY</span>
               </div>
             </header>
