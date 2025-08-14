@@ -19,7 +19,7 @@ export function Carousel({ images }: CarouselProps) {
   }
 
   const currentMedia = images[currentIndex]
-  const isVideo = currentMedia.endsWith('.mp4')
+  const isVideo = /\.mp4$/i.test(currentMedia)
 
   return (
     <div className="relative w-full max-w-4xl mx-auto">
