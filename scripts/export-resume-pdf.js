@@ -50,7 +50,7 @@ async function exportPDF() {
       format: 'Letter',
       printBackground: true,
       preferCSSPageSize: true,
-      scale: 1,
+      scale: 0.99,
       margin: { top: '0in', right: '0in', bottom: '0in', left: '0in' }
     })
 
