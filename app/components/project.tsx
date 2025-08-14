@@ -69,6 +69,20 @@ export function ProjectCard({
     }
   }
 
+  // Compute a card-specific description: keep up to "draw back." if present
+  const cardDescription = (() => {
+    const marker = 'draw back'
+    const lower = description.toLowerCase()
+    const markerIndex = lower.indexOf(marker)
+    if (markerIndex !== -1) {
+      const periodIndex = description.indexOf('.', markerIndex)
+      if (periodIndex !== -1) {
+        return description.slice(0, periodIndex + 1)
+      }
+    }
+    return description
+  })()
+
   return (
     <div 
       className={`${variant} rounded-lg p-6 cursor-pointer`}
@@ -90,7 +104,7 @@ export function ProjectCard({
         <div className="flex-1">
           <h3 className="font-semibold text-lg mb-2">{title}</h3>
           <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-3">
-            {description}
+            {cardDescription}
           </p>
           <div className="flex flex-wrap gap-2 mb-3">
             {technologies.map((tech, index) => (
@@ -134,7 +148,7 @@ export function ProjectCard({
         {/* Right Column - Image/Video */}
         {image && (
           <div className="flex-shrink-0 w-full lg:w-60 h-48 lg:h-60 flex items-center justify-center">
-            {image.endsWith('.mp4') ? (
+            {/\.mp4$/i.test(image) ? (
               <video 
                 ref={videoRef}
                 src={image} 

@@ -329,6 +329,7 @@ export default function ResumePage() {
                   <p>800hrs+ of full-stack development, 15+ projects, 10x AI-assisted Coding, shipping 5+ PRs/day</p>
                   <p>Developed custom AI tools with API integrations and function calling, with state of the art prompt engineering</p>
                   <ul><b>Selected projects:</b></ul>
+                  <li><span className='work-highlight'><a href="https://www.buildwithlayer.com/" target="_blank" rel="noopener noreferrer" className="custom-link">Layer (NYC Startup)</a></span> - Building multi-platform task detection system integrating Discord, Slack, Gmail, Linear, and real-time audio transcription with LLM-powered extraction</li>
                   <li><span className='work-highlight'><a href="https://www.feather.rsvp/" target="_blank" rel="noopener noreferrer" className="custom-link">Feather.rsvp (NYC Startup)</a></span> - Delivered significant business value in just 2 weeks by implementing an intuitive and sleek Rich Text Editor (TipTap) with minimal senior guidance in an unfamiliar codebase.</li>
                   <li><span className='work-highlight'><a href="https://week2-chatbot.vercel.app/" target="_blank" rel="noopener noreferrer" className="custom-link">Watch Genie</a></span> - Built a chatbot with Next.js, tRPC, Supabase, and Vercel AI SDK to provide personalized movie recommendations based on user preferences.</li>
 

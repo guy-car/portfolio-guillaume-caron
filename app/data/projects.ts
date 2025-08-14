@@ -35,6 +35,17 @@ export const projects: Project[] = [
     carouselImages: [
       '/project-showcase/watch-genie/watch-genie-demo.mp4.mp4'
     ]
+  },
+  {
+    title: 'Draw Beyond',
+    description: 'Draw Beyond is a turn-based jam-drawing experience with an AI co-artist. I leaned into the uncanny valley on purpose, asking a vision model to "look" at the canvas and draw back. Under the hood, the model returns structured JSON that maps to a Skia schema of drawing commands. I logged the model\'s perception of the canvas ("I see a face", "this looks like a tree") and its intention ("I will add ears and hair", "I will add a chimney and a sun to make it more uplifting"). The reasoning was coherent, but translating intention into drawing commands was often inconsistent, delightfully weird, sometimes useless. I would like to revisit this with an image-to-SVG or vector approach and better prompt and context management. Until then, I am embracing the chaos in Draw Beyond.',
+    technologies: ['React Native', 'TypeScript', 'Expo', 'Skia'],
+    image: '/project-showcase/draw-beyond/ScreenRecording_08-13-2025 19-04-26_1.mp4',
+    slug: 'draw-beyond',
+    carouselImages: [
+      '/project-showcase/draw-beyond/ScreenRecording_08-13-2025 19-04-26_1.mp4',
+      '/project-showcase/draw-beyond/ScreenRecording_08-13-2025 19-46-16_1.MP4'
+    ]
   }
 ]
 

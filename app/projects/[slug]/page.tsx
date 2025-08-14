@@ -38,9 +38,32 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         {/* Carousel */}
         <Carousel images={project.carouselImages} />
         
-        <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-          {project.description}
-        </p>
+        {(() => {
+          const insertBreaksAfter = ["draw back.", "useless."]
+          let remaining = project.description
+          const paragraphs: string[] = []
+          for (const marker of insertBreaksAfter) {
+            const lowerRemaining = remaining.toLowerCase()
+            const idx = lowerRemaining.indexOf(marker)
+            if (idx !== -1) {
+              const end = idx + marker.length
+              paragraphs.push(remaining.slice(0, end).trim())
+              remaining = remaining.slice(end).trim()
+            }
+          }
+          if (remaining.length > 0) {
+            paragraphs.push(remaining)
+          }
+          return (
+            <div className="space-y-4">
+              {paragraphs.map((para, i) => (
+                <p key={i} className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  {para}
+                </p>
+              ))}
+            </div>
+          )
+        })()}
         
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-2">
