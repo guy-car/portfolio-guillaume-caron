@@ -323,7 +323,7 @@ export default function ResumePage() {
               <div className="experience-item">
                 <div className="job-header">
                   <div className="job-title-company">Full Stack Engineer | Fractal Tech AI Accelerator, NYC</div>
-                  <div className="date-location">May 2024 - Present</div>
+                  <div className="date-location">May 2025 - Present</div>
                 </div>
                 <div className="job-description">
                   <p>800hrs+ of full-stack development, 15+ projects, 10x AI-assisted Coding, shipping 5+ PRs/day</p>
@@ -339,7 +339,7 @@ export default function ResumePage() {
               <div className="experience-item">
                 <div className="job-header">
                   <div className="job-title-company">Self-Taught Developer | Independent Study, NYC</div>
-                  <div className="date-location">Jan 2024 - May 2024</div>
+                  <div className="date-location">Jan 2025 - May 2025</div>
                 </div>
                 <div className="job-description">
                   <p>Dedicated 500+ hours to intensive full-stack development through structured programs including Scrimba's React course and Full Stack Open.</p>
