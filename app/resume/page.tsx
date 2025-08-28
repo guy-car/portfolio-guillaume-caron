@@ -195,8 +195,8 @@ export default function ResumePage() {
 
         .resume-actions {
           position: absolute;
-          top: 20px;
-          right: 20px;
+          top: 10px;
+          right: 10px;
           display: flex;
           gap: 1rem;
           z-index: 1000;
@@ -309,7 +309,7 @@ export default function ResumePage() {
             
             <header className="header">
               <h1>Guillaume Caron</h1>
-              <div className="contact-info" style={{justifyContent: 'space-evenly', textAlign: 'center'}}>
+              <div className="contact-info" style={{justifyContent: 'space-between'}}>
                 <span><i className="fa-solid fa-envelope"></i><a href="mailto:guil.crn@gmail.com">guil.crn@gmail.com</a></span>
                 <span><i className="fa-solid fa-phone"></i>+1 718 581 3551</span>
                 <span><i className="fa-solid fa-globe"></i><a href="https://www.guillaumecaronweb.com" target="_blank" rel="noopener noreferrer">guillaumecaronweb.com</a></span>
