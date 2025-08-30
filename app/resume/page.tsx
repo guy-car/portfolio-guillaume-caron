@@ -98,13 +98,14 @@ export default function ResumePage() {
         }
 
         .section h2 {
-          font-size: 1.3em;
-          font-weight: 800;
-          margin-top: 10px;
-          margin-bottom: 5px;
+          font-size: 1.6em;
+          font-weight: 900;
+          margin-top: 15px;
+          margin-bottom: 8px;
           color: #000;
           text-decoration: underline;
           text-underline-offset: 4px;
+          letter-spacing: -0.5px;
         }
 
         .experience-item {
@@ -318,6 +319,18 @@ export default function ResumePage() {
             </header>
 
             <section className="section">
+              <h2>Executive Summary</h2>
+              <p>Full-stack Software Engineer with startup experience, focused on AI-first applications and AI-assisted coding. Grounded by a decade in film and mindfulness, thrives in fast pace, dynamic settings.</p>
+            </section>
+
+            <section className="section tech-stack-section">
+              <h2>Technical Skills</h2>
+              <div className="tech-items">
+                TypeScript, SQL, React, Next.js, React Native, Tailwind CSS, Node.js, PostgreSQL, Express, Drizzle ORM, Vercel AI SDK, Structured Output, Tool Calling, Context Management, Git, Vercel, Render
+              </div>
+            </section>
+
+            <section className="section">
               <h2>Experience</h2>
               
               <div className="experience-item">
@@ -326,12 +339,11 @@ export default function ResumePage() {
                   <div className="date-location">May 2025 - Present</div>
                 </div>
                 <div className="job-description">
-                  <p>800hrs+ of full-stack development, 15+ projects, 10x AI-assisted Coding, shipping 5+ PRs/day</p>
-                  <p>Developed custom AI tools with API integrations and function calling, with state of the art prompt engineering</p>
+                  <p>800hrs+ of full-stack development, 15+ projects, 10x AI-assisted Coding, shipping 5+ PRs/day. Developed custom AI tools with API integrations, MCPs and state of the art prompt engineering</p>
                   <ul><b>Selected projects:</b></ul>
-                  <li><span className='work-highlight'><a href="https://www.buildwithlayer.com/" target="_blank" rel="noopener noreferrer" className="custom-link">Layer (NYC Startup)</a></span> - Building a multi-platform task detection system integrating Discord, Slack, Gmail, Linear, and real-time audio transcription with LLM-powered extraction</li>
-                  <li><span className='work-highlight'><a href="https://www.feather.rsvp/" target="_blank" rel="noopener noreferrer" className="custom-link">Feather.rsvp (NYC Startup)</a></span> - Delivered significant business value in just 2 weeks by implementing an intuitive and sleek Rich Text Editor (TipTap) with minimal senior guidance in an unfamiliar codebase.</li>
-                  <li><span className='work-highlight'><a href="https://week2-chatbot.vercel.app/" target="_blank" rel="noopener noreferrer" className="custom-link">Watch Genie</a></span> - Built a chatbot with Next.js, tRPC, Supabase, and Vercel AI SDK to provide personalized movie recommendations based on user preferences.</li>
+                  <li><span className='work-highlight'><a href="https://www.buildwithlayer.com/" target="_blank" rel="noopener noreferrer" className="custom-link">SnapTask (NYC Startup)</a></span> - Prototyped during product market fit phase a multi-platform task detection system integrating Discord, Slack, Gmail, Linear, and real-time audio transcription with LLM-powered extraction. Set up MCP servers for context enrichment and task execution</li>
+                  <li><span className='work-highlight'><a href="https://www.feather.rsvp/" target="_blank" rel="noopener noreferrer" className="custom-link">Feather.rsvp (NYC Startup)</a></span> - Unblocked public launch by implementing an intuitive and sleek Rich Text Editor (TipTap) with near complete autonomy in an unfamiliar codebase</li>
+                  <li><span className='work-highlight'><a href="https://week2-chatbot.vercel.app/" target="_blank" rel="noopener noreferrer" className="custom-link">Watch Genie</a></span> - Built a chatbot with Next.js, tRPC, Supabase, and Vercel AI SDK to provide personalized movie recommendations based on user preferences. Integrated TMDB and OMDB APIs</li>
 
                 </div>
               </div>
@@ -342,8 +354,7 @@ export default function ResumePage() {
                   <div className="date-location">Jan 2025 - May 2025</div>
                 </div>
                 <div className="job-description">
-                  <p>Dedicated 500+ hours to intensive full-stack development through structured programs including Scrimba's React course and Full Stack Open.</p>
-                  <p>Built multiple applications: password generator, language translator, Chrome extension, unit converter.</p>
+                  <p>Dedicated 500+ hours to intensive full-stack development through structured programs including Scrimba's React course and Full Stack Open. Built multiple applications: password generator, language translator, Chrome extension, unit converter.</p>
                 </div>
               </div>
 
@@ -353,59 +364,30 @@ export default function ResumePage() {
                   <div className="date-location">Mar 2024 - Nov 2024</div>
                 </div>
                 <div className="job-description">
-                  <p>Reduced operational overhead by 25% through software audits and vendor realignment during transitional phase.</p>
-                  <p>Optimized Salesforce CRM processes and implemented AV systems for hybrid event delivery.</p>
+                  <p>Reduced operational overhead by 25% for NYC's largest meditation center through software audits and vendor realignment. Automated processes leading to reduced admin hours by ~2h/day and improved reliability of booking system for courses/events by 20%.</p>
                 </div>
               </div>
 
               <div className="experience-item">
                 <div className="job-header">
-                  <div className="job-title-company">Mindfulness Teacher & French Interpreter/Tutor | Freelance, NYC</div>
+                  <div className="job-title-company">Mindfulness Teacher | Freelance, NYC</div>
                   <div className="date-location">Mar 2021 - Nov 2023</div>
                 </div>
                 <div className="job-description">
-                  <p>Self-directed practice across diverse settings—from DOE test interpretation to teaching French professionals and meditation to people from all walks of life.</p>
-                  <p>Created safe learning spaces for people from all walks of life, developing the emotional intelligence and active listening I apply to understanding user needs.</p>
+                  <p>Created safe learning spaces for people from all walks of life to develop the emotional intelligence, active listening and groundedness I bring to situations.</p>
                 </div>
               </div>
 
               <div className="experience-item">
                 <div className="job-header">
-                  <div className="job-title-company">Cinematographer & Producer | Film Industry, NYC</div>
+                  <div className="job-title-company">Award Winning Cinematographer | Film Industry, NYC</div>
                   <div className="date-location">2013 - 2021</div>
                 </div>
                 <div className="job-description">
-                  <p>Led cross-functional teams across 100+ film and video projects from pitch to delivery with budgets up to $2M.</p>
-                  <p>Turned creative goals into technical execution plans under tight deadlines.</p>
+                  <p>Led cross-functional teams across 100+ film and video projects from pitch to delivery with budgets up to $2M. Worked on projects released on Netflix, shot documentary series with 130K+ YouTube views, and worked for brands like Nike, Goldman Sachs and Zara.</p>
                 </div>
               </div>
 
-            </section>
-
-            <section className="section tech-stack-section">
-              <h2>Tech Stack</h2>
-              <div className="tech-categories">
-              <div className="tech-category">
-                  <div className="tech-label">Languages</div>
-                  <div className="tech-items">TypeScript — Javascript — SQL — CSS</div>
-                </div>
-                <div className="tech-category">
-                  <div className="tech-label">Frontend:</div>
-                  <div className="tech-items">React — Next.js — React Native —Tailwind CSS — Shadcn UI</div>
-                </div>
-                <div className="tech-category">
-                  <div className="tech-label">Backend:</div>
-                  <div className="tech-items">Node.js — Supabase — PostgreSQL — Express — Drizzle ORM — WebSockets</div>
-                </div>
-                <div className="tech-category">
-                  <div className="tech-label">AI Integration:</div>
-                  <div className="tech-items">Vercel AI SDK — Structured Output — Tool Calling — Context Management</div>
-                </div>
-                <div className="tech-category">
-                  <div className="tech-label">DevOps & Tools:</div>
-                  <div className="tech-items">Git — Docker — Vercel — Render</div>
-                </div>
-              </div>
             </section>
 
             <section className="section">
