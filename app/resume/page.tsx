@@ -101,7 +101,7 @@ export default function ResumePage() {
           font-size: 1.6em;
           font-weight: 900;
           margin-top: 15px;
-          margin-bottom: 8px;
+          margin-bottom: 3px;
           color: #000;
           text-decoration: underline;
           text-underline-offset: 4px;
@@ -147,6 +147,20 @@ export default function ResumePage() {
 
         .job-description p {
           margin-bottom: 6px;
+          font-size: 0.95em;
+          text-align: left;
+        }
+
+        .job-description ul {
+          margin-left: 20px;
+          margin-top: 6px;
+          margin-bottom: 6px;
+          padding-left: 0;
+          list-style-type: disc;
+        }
+
+        .job-description li {
+          margin-bottom: 4px;
           font-size: 0.95em;
           text-align: left;
         }
@@ -276,7 +290,7 @@ export default function ResumePage() {
           /* Improve text readability on print */
           .resume-container { color: #000 !important; font-size: 10.9pt !important; line-height: 1.30 !important; }
           .header h1 { font-size: 19pt !important; }
-          .section h2 { font-size: 12.5pt !important; text-decoration: none !important; border: 0 !important; }
+          .section h2 { font-size: 12.5pt !important; text-decoration: none !important; border: 0 !important; margin-bottom: 2px !important; }
 
           /* Condense header separator */
           .header { padding-bottom: 8px !important; margin-bottom: 6px !important; border-bottom-width: 1px !important; }
@@ -335,15 +349,34 @@ export default function ResumePage() {
               
               <div className="experience-item">
                 <div className="job-header">
+                  <div className="job-title-company">Software Engineer | Cape, NYC</div>
+                  <div className="date-location">Sept 2025 - Present</div>
+                </div>
+                <div className="job-description">
+                  <ul>
+                    <li>Designed and shipped 4-agent LLM pipeline that aggregates professional network data and drafts personalized, relationship-aware outreach</li>
+                    <li>Built async style extraction system that analyzes user messaging patterns to generate style profiles, enforced at generation time for voice-matched output</li>
+                    <li>Built backend data pipeline automating context aggregation previously requiring intensive manual labor</li>
+                    <li>Implemented type-safe structured outputs using BAML for reliable LLM interactions</li>
+                    <li>Implemented eval system to measure and iterate on LLM output quality</li>
+                    <li>Leading UX iteration based on direct customer interviews</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="experience-item">
+                <div className="job-header">
                   <div className="job-title-company">Full Stack Engineer | Fractal Tech AI Accelerator, NYC</div>
-                  <div className="date-location">May 2025 - Present</div>
+                  <div className="date-location">May 2025 - Aug 2025</div>
                 </div>
                 <div className="job-description">
                   <p>800hrs+ of full-stack development, 15+ projects, 10x AI-assisted Coding, shipping 5+ PRs/day. Developed custom AI tools with API integrations, MCPs and state of the art prompt engineering</p>
-                  <ul><b>Selected projects:</b></ul>
-                  <li><span className='work-highlight'><a href="https://www.buildwithlayer.com/" target="_blank" rel="noopener noreferrer" className="custom-link">Layer (NYC Startup)</a></span> - Prototyped during product market fit phase a multi-platform task detection system integrating Discord, Slack, Gmail, Linear, and real-time audio transcription with LLM-powered extraction. Set up MCP servers for context enrichment and task execution</li>
-                  <li><span className='work-highlight'><a href="https://www.feather.rsvp/" target="_blank" rel="noopener noreferrer" className="custom-link">Feather.rsvp (NYC Startup)</a></span> - Unblocked public launch by implementing an intuitive and sleek Rich Text Editor (TipTap) with near complete autonomy in an unfamiliar codebase</li>
-                  <li><span className='work-highlight'><a href="https://week2-chatbot.vercel.app/" target="_blank" rel="noopener noreferrer" className="custom-link">Watch Genie</a></span> - Built a chatbot with Next.js, tRPC, Supabase, and Vercel AI SDK to provide personalized movie recommendations based on user preferences. Integrated TMDB and OMDB APIs</li>
+                  <p><b>Selected projects:</b></p>
+                  <ul>
+                    <li><span className='work-highlight'><a href="https://www.buildwithlayer.com/" target="_blank" rel="noopener noreferrer" className="custom-link">Layer (NYC Startup)</a></span> - Prototyped during product market fit phase a multi-platform task detection system integrating Discord, Slack, Gmail, Linear, and real-time audio transcription with LLM-powered extraction. Set up MCP servers for context enrichment and task execution</li>
+                    <li><span className='work-highlight'><a href="https://www.feather.rsvp/" target="_blank" rel="noopener noreferrer" className="custom-link">Feather.rsvp (NYC Startup)</a></span> - Unblocked public launch by implementing an intuitive and sleek Rich Text Editor (TipTap) with near complete autonomy in an unfamiliar codebase</li>
+                    <li><span className='work-highlight'><a href="https://week2-chatbot.vercel.app/" target="_blank" rel="noopener noreferrer" className="custom-link">Watch Genie</a></span> - Built a chatbot with Next.js, tRPC, Supabase, and Vercel AI SDK to provide personalized movie recommendations based on user preferences. Integrated TMDB and OMDB APIs</li>
+                  </ul>
 
                 </div>
               </div>
@@ -364,30 +397,9 @@ export default function ResumePage() {
                   <div className="date-location">Mar 2024 - Nov 2024</div>
                 </div>
                 <div className="job-description">
-                  <p>Reduced operational overhead by 25% for NYC's largest meditation center through software audits and vendor realignment. Automated processes leading to reduced admin hours by ~2h/day and improved reliability of booking system for courses/events by 20%.</p>
+                  <p>Reduced operational overhead by 25% for NYC's largest meditation center through software audits and vendor realignment. Automated processes leading to reduced admin hours by ~2h/day and +20% bookings.</p>
                 </div>
               </div>
-
-              <div className="experience-item">
-                <div className="job-header">
-                  <div className="job-title-company">Mindfulness Teacher | Freelance, NYC</div>
-                  <div className="date-location">Mar 2021 - Nov 2023</div>
-                </div>
-                <div className="job-description">
-                  <p>Created safe learning spaces for people from all walks of life to develop the emotional intelligence, active listening and groundedness I bring to situations.</p>
-                </div>
-              </div>
-
-              <div className="experience-item">
-                <div className="job-header">
-                  <div className="job-title-company">Award Winning Cinematographer | Film Industry, NYC</div>
-                  <div className="date-location">2013 - 2021</div>
-                </div>
-                <div className="job-description">
-                  <p>Led cross-functional teams across 100+ film and video projects from pitch to delivery with budgets up to $2M. Worked on projects released on Netflix, shot documentary series with 130K+ YouTube views, and worked for brands like Nike, Goldman Sachs and Zara.</p>
-                </div>
-              </div>
-
             </section>
 
             <section className="section">
