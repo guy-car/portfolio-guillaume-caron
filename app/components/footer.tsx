@@ -26,7 +26,7 @@ export default function Footer() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://x.com/_guillaumecaron"
+            href="https://x.com/gcizalive"
           >
             <Image
               src="/xlogo-white.png"

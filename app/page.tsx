@@ -13,13 +13,7 @@ export default function Page() {
       {/* Bio Section */}
       <div className="space-y-4">
         <p className="text-lg text-neutral-100 leading-relaxed">
-          Hey, I'm Guillaume. A cinematographer turned software engineer.
-        </p>
-        <p className="text-lg text-neutral-100 leading-relaxed">
-          After years of building immersive experiences in film, I now apply that same principle to software engineering—creating the magic of uninterrupted flow. I engineer systems that feel natural and responsive, enabling users to focus on their core mission while the technology quietly handles the complexity.
-        </p>
-        <p className="text-lg text-neutral-100 leading-relaxed">
-          If you're building something impactful and need a full-stack engineer, I'd love to connect.
+          Hey, I'm Guillaume. Former cinematographer and meditation teacher. Now I whisper to AI agents and build esoteric systems that open up new engineering and product solutions.
         </p>
         <div className="flex justify-end">
           <div className="flex items-center space-x-3">
@@ -48,7 +42,7 @@ export default function Page() {
               className="transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
               rel="noopener noreferrer"
               target="_blank"
-              href="https://x.com/_guillaumecaron"
+              href="https://x.com/gcizalive"
             >
               <Image
                 src="/xlogo-black.png"
@@ -99,9 +93,11 @@ export default function Page() {
           <ProjectCard
             title={featuredProject.title}
             description={featuredProject.description}
+            cardDescription={featuredProject.cardDescription}
             technologies={featuredProject.technologies}
             liveUrl={featuredProject.liveUrl}
             image={featuredProject.image}
+            logo={featuredProject.logo}
             slug={featuredProject.slug}
             variant="glass-b"
             chipStyle="chipStyle5"

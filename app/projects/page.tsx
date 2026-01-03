@@ -18,10 +18,12 @@ export default function ProjectsPage() {
             key={index}
             title={project.title}
             description={project.description}
+            cardDescription={project.cardDescription}
             technologies={project.technologies}
             liveUrl={project.liveUrl}
             sourceUrl={project.sourceUrl}
             image={project.image}
+            logo={project.logo}
             slug={project.slug}
             variant="glass-a"
             chipStyle="chipStyle5"
