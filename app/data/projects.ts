@@ -1,28 +1,34 @@
 export interface Project {
   title: string
   description: string
+  cardDescription?: string
   technologies: string[]
   liveUrl?: string
   sourceUrl?: string
   image?: string
+  logo?: string
   slug: string
   carouselImages: string[]
 }
 
 export const projects: Project[] = [
   {
-    title: 'Feather.rsvp',
-    description: 'I implemented TipTap for Feather.rsvp, a NYC startup. In just 2 weeks, I delivered a sleek and intuitive Rich Text Editor with minimal senior guidance in an unfamiliar codebase.',
-    technologies: ['React', 'TypeScript', 'TipTap','Chakra UI V3', ],
-    liveUrl: 'https://www.feather.rsvp/welcome',
-    image: '/project-showcase/feather/feather-demo-video-before-after.mp4',
-    slug: 'feather-rsvp',
-    carouselImages: [
-      '/project-showcase/feather/feather-demo-video-before-after.mp4',
-      '/project-showcase/feather/Feather-1.png',
-      '/project-showcase/feather/Feather-2.png', 
-      '/project-showcase/feather/Feather-4.png'
-    ]
+    title: 'Cape',
+    description: `I joined [Cape](https://joincape.ai/) as a software engineer to own their core product: an AI system that writes personalized outreach asking for warm intros. The catch: you're writing on behalf of two people who already know each other. Get the voice or relationship wrong and it's immediately obvious.
+
+I prototyped the initial architecture with 3 agents in 2 weeks. At the time of writing this, it grew to 8 agents in production.
+
+The design philosophy: AI agents are unreliable. Don't throw LLMs at everything. They're a liability that compounds. Compute everything you can. Use LLMs only on problems that require them. Keep structured outputs tight. And always design with evals in mind so you know which agent to blame when something breaks.
+
+I built the eval system for the pipeline so we can iterate on prompts, add agents, or fix plumbing based on actual signal.
+
+Beyond the pipeline, I led UX iteration through direct customer interviews. I also lead the effort on AI-assisted coding at Cape: creating architecture documentation that helps onboard new devs and makes AI agents more context-aware, pushing cursor rules to the repo, and introducing MCPs that speed up team workflows.`,
+    cardDescription: `Software Engineer at Cape, owning the AI Drafter pipeline. Designed around a principle: compute everything you can, use LLMs as last resort, and always know how you'll eval.`,
+    technologies: ['TypeScript', 'BAML', 'OpenAI', 'Prisma', 'tRPC'],
+    liveUrl: 'https://joincape.ai/',
+    logo: '/cape-logo.svg',
+    slug: 'cape',
+    carouselImages: []
   },
   {
     title: 'Watch Genie',
@@ -46,6 +52,20 @@ export const projects: Project[] = [
     carouselImages: [
       '/project-showcase/draw-beyond/ScreenRecording_08-13-2025 19-04-26_1.mp4',
       '/project-showcase/draw-beyond/ScreenRecording_08-13-2025 19-46-16_1.MP4'
+    ]
+  },
+  {
+    title: 'Feather.rsvp',
+    description: 'I implemented TipTap for Feather.rsvp, a NYC startup. In just 2 weeks, I delivered a sleek and intuitive Rich Text Editor with minimal senior guidance in an unfamiliar codebase.',
+    technologies: ['React', 'TypeScript', 'TipTap', 'Chakra UI V3'],
+    liveUrl: 'https://www.feather.rsvp/welcome',
+    image: '/project-showcase/feather/feather-demo-video-before-after.mp4',
+    slug: 'feather-rsvp',
+    carouselImages: [
+      '/project-showcase/feather/feather-demo-video-before-after.mp4',
+      '/project-showcase/feather/Feather-1.png',
+      '/project-showcase/feather/Feather-2.png',
+      '/project-showcase/feather/Feather-4.png'
     ]
   }
 ]

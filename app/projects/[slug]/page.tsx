@@ -12,6 +12,41 @@ interface ProjectPageProps {
   }
 }
 
+// Parse markdown-style links [text](url) into React elements
+function parseLinks(text: string): React.ReactNode[] {
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g
+  const parts: React.ReactNode[] = []
+  let lastIndex = 0
+  let match
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    // Add text before the link
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index))
+    }
+    // Add the link
+    parts.push(
+      <a
+        key={match.index}
+        href={match[2]}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors"
+      >
+        {match[1]}
+      </a>
+    )
+    lastIndex = match.index + match[0].length
+  }
+
+  // Add remaining text
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex))
+  }
+
+  return parts.length > 0 ? parts : [text]
+}
+
 export default function ProjectPage({ params }: ProjectPageProps) {
   const project = getProjectBySlug(params.slug)
 
@@ -35,10 +70,36 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       <div className="space-y-4">
         <h1 className="text-3xl font-bold tracking-tighter">{project.title}</h1>
         
-        {/* Carousel */}
-        <Carousel images={project.carouselImages} />
+        {/* Logo or Carousel */}
+        {project.logo && project.carouselImages.length === 0 ? (
+          <div className="flex items-center justify-center py-8">
+            <img 
+              src={project.logo} 
+              alt={`${project.title} logo`}
+              className="w-32 h-32 dark:invert"
+            />
+          </div>
+        ) : (
+          <Carousel images={project.carouselImages} />
+        )}
         
         {(() => {
+          // First try splitting by double newlines (for multi-paragraph descriptions)
+          const byNewlines = project.description.split(/\n\n+/).map(p => p.trim()).filter(p => p.length > 0)
+          
+          if (byNewlines.length > 1) {
+            return (
+              <div className="space-y-4">
+                {byNewlines.map((para, i) => (
+                  <p key={i} className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                    {parseLinks(para)}
+                  </p>
+                ))}
+              </div>
+            )
+          }
+          
+          // Fallback: use marker-based splitting for legacy descriptions
           const insertBreaksAfter = ["draw back.", "useless."]
           let remaining = project.description
           const paragraphs: string[] = []
@@ -58,7 +119,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <div className="space-y-4">
               {paragraphs.map((para, i) => (
                 <p key={i} className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                  {para}
+                  {parseLinks(para)}
                 </p>
               ))}
             </div>

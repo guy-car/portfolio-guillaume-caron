@@ -7,10 +7,12 @@ import { useState, useRef } from 'react'
 interface ProjectCardProps {
   title: string
   description: string
+  cardDescription?: string
   technologies: string[]
   liveUrl?: string
   sourceUrl?: string
   image?: string
+  logo?: string
   slug?: string
   variant?: 'glass-a' | 'glass-b'
   chipStyle?: 'chipStyle1' | 'chipStyle2' | 'chipStyle3' | 'chipStyle4' | 'chipStyle5'
@@ -42,11 +44,13 @@ const chipStyles = {
 
 export function ProjectCard({ 
   title, 
-  description, 
+  description,
+  cardDescription,
   technologies, 
   liveUrl, 
   sourceUrl, 
-  image, 
+  image,
+  logo,
   slug,
   variant = 'glass-a',
   chipStyle = 'chipStyle1'
@@ -69,8 +73,10 @@ export function ProjectCard({
     }
   }
 
-  // Compute a card-specific description: keep up to "draw back." if present
-  const cardDescription = (() => {
+  // Compute a card-specific description: use cardDescription if provided, otherwise truncate
+  const displayDescription = (() => {
+    if (cardDescription) return cardDescription
+    
     const marker = 'draw back'
     const lower = description.toLowerCase()
     const markerIndex = lower.indexOf(marker)
@@ -104,7 +110,7 @@ export function ProjectCard({
         <div className="flex-1">
           <h3 className="font-semibold text-lg mb-2">{title}</h3>
           <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-3">
-            {cardDescription}
+            {displayDescription}
           </p>
           <div className="flex flex-wrap gap-2 mb-3">
             {technologies.map((tech, index) => (
@@ -145,8 +151,16 @@ export function ProjectCard({
           </div>
         </div>
         
-        {/* Right Column - Image/Video */}
-        {image && (
+        {/* Right Column - Logo/Image/Video */}
+        {logo ? (
+          <div className="flex-shrink-0 flex items-center justify-center lg:justify-end">
+            <img 
+              src={logo} 
+              alt={`${title} logo`}
+              className="w-24 h-24 lg:w-32 lg:h-32 dark:invert"
+            />
+          </div>
+        ) : image && (
           <div className="flex-shrink-0 w-full lg:w-60 h-48 lg:h-60 flex items-center justify-center">
             {/\.mp4$/i.test(image) ? (
               <video 
