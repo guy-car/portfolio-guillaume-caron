@@ -13,7 +13,7 @@ export default function Page() {
       {/* Bio Section */}
       <div className="space-y-4">
         <p className="text-lg text-neutral-100 leading-relaxed">
-          Hey, I'm Guillaume. Former cinematographer and meditation teacher. Now I whisper to AI agents and build esoteric systems that open up new engineering and product solutions.
+          I whisper to AI agents and build esoteric systems that open up new engineering and product solutions. Formerly: meditation teacher, cinematographer.
         </p>
         <div className="flex justify-end">
           <div className="flex items-center space-x-3">
