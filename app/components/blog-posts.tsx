@@ -64,19 +64,20 @@ export function BlogPostsEnhanced() {
   )
 }
 
-export function FeaturedBlogPost() {
+export function FeaturedBlogPost({ slug }: { slug?: string } = {}) {
   let allBlogs = getBlogPosts()
-  const latestPost = allBlogs
-    .sort((a, b) => {
-      if (
-        new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
-      ) {
-        return -1
-      }
-      return 1
-    })[0]
+  
+  // If a specific slug is provided, find that post; otherwise use the latest
+  const featuredPost = slug 
+    ? allBlogs.find(post => post.slug === slug)
+    : allBlogs.sort((a, b) => {
+        if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
+          return -1
+        }
+        return 1
+      })[0]
 
-  if (!latestPost) {
+  if (!featuredPost) {
     return (
       <div className="text-neutral-600 dark:text-neutral-400 text-sm">
         No blog posts available yet.
@@ -86,18 +87,18 @@ export function FeaturedBlogPost() {
 
   return (
     <Link
-                  className="block glass-a rounded-lg p-6"
-      href={`/blog/${latestPost.slug}`}
+      className="block glass-a rounded-lg p-6"
+      href={`/blog/${featuredPost.slug}`}
     >
       <div className="w-full">
         <h3 className="text-neutral-900 dark:text-neutral-100 tracking-tight font-medium mb-2 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors">
-          {latestPost.metadata.title}
+          {featuredPost.metadata.title}
         </h3>
         <div className="flex items-center space-x-2 mb-3 text-sm text-neutral-600 dark:text-neutral-400">
           <span className="tabular-nums">
-            {formatDate(latestPost.metadata.publishedAt, false)}
+            {formatDate(featuredPost.metadata.publishedAt, false)}
           </span>
-          {latestPost.metadata.readingTime && (
+          {featuredPost.metadata.readingTime && (
             <>
               <span className="text-neutral-400 dark:text-neutral-500">|</span>
               <div className="flex items-center space-x-1">
@@ -115,14 +116,14 @@ export function FeaturedBlogPost() {
                     d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" 
                   />
                 </svg>
-                <span>{latestPost.metadata.readingTime} min read</span>
+                <span>{featuredPost.metadata.readingTime} min read</span>
               </div>
             </>
           )}
         </div>
-        {latestPost.metadata.summary && (
+        {featuredPost.metadata.summary && (
           <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
-            {latestPost.metadata.summary}
+            {featuredPost.metadata.summary}
           </p>
         )}
       </div>
