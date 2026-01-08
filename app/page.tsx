@@ -119,7 +119,7 @@ export default function Page() {
           </Link>
         </div>
         
-        <FeaturedBlogPost />
+        <FeaturedBlogPost slug="2025-06-29-mirror-at-the-edges" />
       </div>
     </section>
   )
