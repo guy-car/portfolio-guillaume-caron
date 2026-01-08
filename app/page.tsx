@@ -13,7 +13,9 @@ export default function Page() {
       {/* Bio Section */}
       <div className="space-y-4">
         <p className="text-lg text-neutral-100 leading-relaxed">
-          I whisper to AI agents and build esoteric systems that open up new engineering and product solutions. Formerly: meditation teacher, cinematographer.
+          I whisper to AI agents and build esoteric systems that open up new engineering and product solutions.
+          <br />
+          Formerly: meditation teacher, cinematographer.
         </p>
         <div className="flex justify-end">
           <div className="flex items-center space-x-3">
